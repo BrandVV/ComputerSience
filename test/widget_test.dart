@@ -16,9 +16,7 @@ void main() {
     // Build our app and trigger a frame.
 
     final prefs = await SharedPreferences.getInstance();
-    final value = prefs.getString("darkmode") ?? 0;
-    final autoLogin = prefs.getString("autoLogin") ?? 0;
-    await tester.pumpWidget(MyApp(darkmode: value.toString(), autoLogin: autoLogin.toString(),));
+    await tester.pumpWidget(const MyApp());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

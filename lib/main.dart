@@ -7,29 +7,19 @@ import 'homepage.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
-  dynamic value = prefs.getString("darkmode");
-  if (value != "0" && value != "1") {
-    value = "0";
-  }
-  final String autoLogin = prefs.getString("autoLogin").toString();
 
-  runApp(MyApp(darkmode: value, autoLogin: autoLogin));
+  runApp(const MyApp());
 }
 
 //Hauptmethode der App
 class MyApp extends StatelessWidget {
-  late String darkmode;
-  late String autoLogin;
-  MyApp({Key? key, required this.darkmode, required this.autoLogin})
-      : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(
-          darkmode: darkmode,
-          autoLogin: autoLogin), //Klasse Homepage aus 'homepage.dart'
+      home: HomePage(), //Klasse Homepage aus 'homepage.dart'
     );
   }
 }

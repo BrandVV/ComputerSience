@@ -1,13 +1,13 @@
 // ignore_for_file: file_names, must_be_immutable
 
+import 'package:app/pages/home.dart';
 import 'package:flutter/material.dart';
-import '../pages/login.dart';
 
 class MyDesktopBody extends StatelessWidget {
   late String darkmode;
   late String autoLogin;
 
-  MyDesktopBody({Key? key, required this.darkmode, required this.autoLogin}) : super(key: key);
+  MyDesktopBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class MyDesktopBody extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Login(darkmode: darkmode, autoLogin: autoLogin),
+              UserHome(),
             ],
           ),
         ),
